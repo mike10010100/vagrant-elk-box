@@ -10,7 +10,7 @@ class { 'java': }
 # Elasticsearch
 class { 'elasticsearch':
   manage_repo  => true,
-  repo_version => '1.7',
+  repo_version => '2.x',
 }
 
 elasticsearch::instance { 'es-01':
@@ -38,7 +38,7 @@ class { 'logstash':
   # autoupgrade  => true,
   ensure       => 'present',
   manage_repo  => true,
-  repo_version => '1.5',
+  repo_version => '2.2',
   require      => [ Class['java'], Class['elasticsearch'] ],
 }
 
